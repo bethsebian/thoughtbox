@@ -13,7 +13,6 @@ class UserCanLogOutTest < Capybara::Rails::TestCase
   end
 
   test "new user does not see log out button" do
-    skip
     visit '/login'
     refute_content 'Log Out'
   end

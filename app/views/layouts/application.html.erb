@@ -11,7 +11,11 @@
   <nav>
     <ul>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Log Out", session_path(session), method: :delete %></li>
+      <% if current_user %>
+        <li><%= link_to "Log Out", session_path(session), method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Log In", '/login' %></li>
+      <% end %>
     </ul>
   </nav>
 
