@@ -13,6 +13,7 @@ group :development, :test do
   gem 'pry'
   gem 'minitest-rails'
   gem 'byebug'
+  gem 'minitest-rails-capybara'
 end
 
 group :development do
