@@ -7,8 +7,8 @@ class UserAddsLinkTest < Capybara::Rails::TestCase
 
     visit links_path
 
-    fill_in "url", with: url
-    fill_in "title", with: title
+    fill_in "Url", with: url
+    fill_in "Title", with: title
     click_on "Add Link"
 
     assert_equal links_path, current_path
