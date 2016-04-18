@@ -1,11 +1,13 @@
-class UnauthenticatedUserRedirectedTest < Minitest::Test
+require "test_helper"
+
+class UnauthUserRedirectedToLoginTest < Capybara::Rails::TestCase
   test "it redirects unauthenticated user to login page" do
-    visit "/"
+    visit '/'
     assert_equal "/login", current_path
   end
 
-  test "it redirects unauthenticated user to login page" do
-    skip 
+  test "authenticated user is not redirected" do
+    skip
     user  = User.create(email: "janedoe@example.com",
                         password: "password")
     # (stub)
