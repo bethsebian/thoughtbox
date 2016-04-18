@@ -1,0 +1,14 @@
+<h1>Log In or Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :email, "email" %>:
+  <%= f.text_field :email %><br />
+
+  <%= f.label :password, "password"%>:
+  <%= f.password_field :password %><br />
+
+  <%= f.label :password_confirmation, "password confirmation" %>:
+  <%= f.password_field :password_confirmation %><br />
+
+  <%= f.submit "Submit"%>
+<% end %>

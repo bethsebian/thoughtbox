@@ -7,10 +7,10 @@ class UnauthUserRedirectedToLoginTest < Capybara::Rails::TestCase
   end
 
   test "authenticated user is not redirected" do
-    skip
     user  = User.create(email: "janedoe@example.com",
                         password: "password")
-    # (stub)
+
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
 
     visit "/"
     assert_equal "/", current_path
