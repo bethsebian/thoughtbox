@@ -5,12 +5,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
       redirect_to links_path
     else
+      redirect_to '/signup'
       flash[:notice] = 'Please use a different email address'
-      redirect_to 'new'
     end
   end
 
