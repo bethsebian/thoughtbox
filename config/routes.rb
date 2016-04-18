@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'index#home'
+  root 'home#index'
+
+  get '/login', to: "user#index"
 end
