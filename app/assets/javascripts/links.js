@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function listAllIdeas() {
-  var target = $('.links-list');
+  var target = $('#links-list');
   return $.getJSON('api/v1/links.json').then(function (links) {
     collectAndFormatLinks(links, target);
   });
