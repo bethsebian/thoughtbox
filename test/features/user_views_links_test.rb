@@ -6,10 +6,13 @@ class UserViewsLinksTest < Capybara::Rails::TestCase
                        password: "password")
     link_1 = Link.create(url: "http://www.word.com",
                          title: "Best Title",
-                         read_status: true)
+                         read_status: true,
+                         user_id: user.id)
     link_2 = Link.create(url: "http://www.believeland.com",
-                         title: "Second Best Title")
+                         title: "Second Best Title",
+                         user_id: user.id)
 
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
 
     visit '/links'
     assert_content page, "http://www.word.com"

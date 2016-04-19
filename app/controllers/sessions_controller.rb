@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to links_path, success: "Welcome!"
     else
-      flash.now[:danger] = "The username or password is invalid. Please try again."
+      flash[:notice] = "The username or password is invalid. Please try again."
       render :new
     end
   end
