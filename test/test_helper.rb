@@ -5,6 +5,7 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "capybara/rails"
 require "mocha/mini_test"
+require "rack/test"
 
 class ActiveSupport::TestCase
   fixtures :all
@@ -12,4 +13,8 @@ end
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
+end
+
+class ActiveSupport::TestCase
+  include Rack::Test::Methods
 end
